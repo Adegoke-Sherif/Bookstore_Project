@@ -17,7 +17,7 @@ const bookSchema = mongoose.Schema({
   },
   isbn: {
     type: String,
-    required: true,
+    required: false,
     unique: [true, "ISBN must be unique"]
   },
   price: {

@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { connect } from "../src/database/db.js";
 import bookRouter from "./routes/book.route.js";
+import authorRouter from "./routes/author.route.js";
 
 
 dotenv.config();
@@ -12,6 +13,7 @@ const PORT = process.env.PORT || 3300;
 //MiddleWare
 app.use(express.json()); //body-parser
 app.use("/api/v1/books", bookRouter)
+app.use("/api/v1/authors", authorRouter)
 
 app.get("/", (req, res) => {
   res.send("Hello World")
